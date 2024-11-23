@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLoat Input Field</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: #191825;
+        }
+        .input-field input{
+          width: 30vw;
+          height: 7vh;
+          background: #191825;
+          outline: none;
+          border: 1px solid white;
+          border-radius: 5px;
+          color: white;
+          padding: 15px;
+          font-size: 25px;
+        }
+        .input-field label{
+            position: absolute;
+            top: 50%;
+            left: 29rem;
+            color: white;
+            font-size: 25px;
+            transform: translateY(-50%);
+            pointer-events: none;
+            transition: .2s;
+        }
+        input:focus{
+            border-color: lime;
+        }
+
+        .input-field input:focus ~ label{
+            top: 46.3%;
+            color: lime;
+            padding: 5px;
+            font-size: 20px;
+            background: #191825;
+        }
+    </style>
+</head>
+<body>
+    <div class="input-field">
+        <input type="text" name="username" id="username">
+        <label>username</label>
+    </div>
+    
+</body>
+</html>
