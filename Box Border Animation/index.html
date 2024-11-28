@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Border Animation</title>
+    <style>
+        *
+        {
+            padding: 0;
+            margin: 0;
+            box-sizing: 0;
+        }
+        body
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #000;
+        }
+        .box {
+          width: 30vw;
+          height: 40vh;
+          border-radius: 20px;
+          background: repeating-conic-gradient(from var(--a), magenta 0%, magenta 5%, transparent 5%, transparent 40%, magenta 50%);
+          animation: animate 2s linear infinite;   
+        }
+           @property --a{
+            syntax: '<angle>';
+            inherits: false;
+            initial-value: 0deg;
+           }
+
+           @keyframes animate {
+
+            0%
+            {
+                --a: 0deg;
+            }
+            100%
+            {
+                --a: 360deg;
+            }
+            
+           }
+           .box::before
+           {
+            content: '';
+            position: absolute;
+            top: 30.5%;
+            left: 35.5%;
+            width: 29vw;
+            height: 39vh;
+            background: #2b2a2a;
+            border-radius: 20px;
+           }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
